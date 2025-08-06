@@ -51,7 +51,7 @@ To use this image in a Kubernetes cluster for debugging:
    spec:
      containers:
        - name: crisis-tools
-         image: <your-registry>/linux-crisis-tools:latest
+         image: docker.io/basilcrow/crisis-tools:latest
          command: ["sleep", "infinity"]
          securityContext:
            privileged: true
