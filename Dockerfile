@@ -14,11 +14,13 @@ RUN apt-get update \
         nicstat \
         numactl \
         procps \
+        strace \
         sysstat \
         tcpdump \
         tiptop \
         trace-cmd \
         util-linux \
+        vim-tiny \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/*
 
