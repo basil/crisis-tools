@@ -47,12 +47,17 @@ To use this image in a Kubernetes cluster for debugging:
    metadata:
      name: crisis-tools-pod
    spec:
+     hostPID: true
      containers:
        - name: crisis-tools
          image: docker.io/basilcrow/crisis-tools:latest
          command: ["sleep", "infinity"]
          securityContext:
            privileged: true
+           capabilities:
+             add:
+               - SYS_ADMIN
+               - SYS_PTRACE
    ```
 
 2. Apply the pod manifest:
