@@ -1,6 +1,6 @@
 # Linux Crisis Tools
 
-This repository provides a `Dockerfile` to create a container image with pre-installed Linux crisis tools, as recommended in Brendan Gregg's blog post "[Linux Crisis Tools](https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html)." The image is designed for debugging performance issues in Kubernetes production environments, ensuring essential diagnostic tools are readily available without installation delays during outages.
+This repository provides a Dockerfile to create a container image with pre-installed Linux crisis tools, as recommended in Brendan Gregg’s blog post “[Linux Crisis Tools](https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html).” The image is designed for debugging performance issues in Kubernetes production environments, ensuring essential diagnostic tools are readily available without installation delays during outages.
 
 ## Purpose
 
