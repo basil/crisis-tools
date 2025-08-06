@@ -25,7 +25,6 @@ The `Dockerfile` installs the following packages, as recommended by Brendan Greg
 | `nicstat`                                       | `nicstat(1)`                                                                                                                                                                       | Net device stats        |
 | `ethtool`                                       | `ethtool(8)`                                                                                                                                                                       | Net device info         |
 | `tiptop`                                        | `tiptop(1)`                                                                                                                                                                        | PMU/PMC top             |
-| `cpuid`                                         | `cpuid(1)`                                                                                                                                                                         | CPU details             |
 | `msr-tools`                                     | `rdmsr(8)`, `wrmsr(8)`                                                                                                                                                             | CPU digging             |
 
 > [!NOTE]

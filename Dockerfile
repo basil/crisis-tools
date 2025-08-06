@@ -6,7 +6,6 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         bpfcc-tools \
         bpftrace \
-        cpuid \
         ethtool \
         htop \
         iproute2 \
