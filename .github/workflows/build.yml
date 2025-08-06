@@ -1,5 +1,5 @@
 ---
-name: Build
+name: Build Docker image
 
 on:
   push:
@@ -14,6 +14,7 @@ on:
 
 jobs:
   build:
+    name: Build Docker image
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -35,7 +36,7 @@ jobs:
           docker run --rm -i ghcr.io/reteps/dockerfmt:latest -c <Dockerfile
 
       - name: Run hadolint on Dockerfile
-        uses: hadolint/hadolint-action@v3.1.0
+        uses: hadolint/hadolint-action@v3
         with:
           dockerfile: Dockerfile
 
