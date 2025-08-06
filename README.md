@@ -1,6 +1,6 @@
 # Linux Crisis Tools
 
-This repository provides a Dockerfile to create a container image with pre-installed Linux crisis tools, as recommended in Brendan Gregg’s blog post “[Linux Crisis Tools](https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html).” The image is designed for debugging performance issues in Kubernetes production environments, ensuring essential diagnostic tools are readily available without installation delays during outages.
+This repository provides a `Dockerfile` to create a container image with pre-installed Linux crisis tools, as recommended in Brendan Gregg’s blog post “[Linux Crisis Tools](https://www.brendangregg.com/blog/2024-03-24/linux-crisis-tools.html).” The image is designed for debugging performance issues in Kubernetes production environments, ensuring essential diagnostic tools are readily available without installation delays during outages.
 
 ## Purpose
 
@@ -25,8 +25,6 @@ The `Dockerfile` installs the following packages, as recommended by Brendan Greg
 | `nicstat`                                       | `nicstat(1)`                                                                                                                                                                       | Net device stats        |
 | `ethtool`                                       | `ethtool(8)`                                                                                                                                                                       | Net device info         |
 | `tiptop`                                        | `tiptop(1)`                                                                                                                                                                        | PMU/PMC top             |
-| `cpuid`                                         | `cpuid(1)`                                                                                                                                                                         | CPU details             |
-| `msr-tools`                                     | `rdmsr(8)`, `wrmsr(8)`                                                                                                                                                             | CPU digging             |
 
 > [!NOTE]
 > Some tools (e.g., `bpfcc-tools`, `bpftrace`) require kernel headers and specific privileges to function fully. Ensure your Kubernetes environment grants necessary permissions (e.g., `SYS_ADMIN` capabilities or privileged mode) for eBPF and tracing tools.

@@ -48,3 +48,4 @@ jobs:
         with:
           push: false
           tags: crisis-tools:latest
+          platforms: linux/amd64,linux/arm64

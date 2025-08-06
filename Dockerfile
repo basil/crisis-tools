@@ -6,13 +6,11 @@ RUN apt-get update \
     && apt-get install -y --no-install-recommends \
         bpfcc-tools \
         bpftrace \
-        cpuid \
         ethtool \
         htop \
         iproute2 \
         linux-tools-common \
         linux-tools-generic \
-        msr-tools \
         nicstat \
         numactl \
         procps \
