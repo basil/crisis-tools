@@ -14,6 +14,7 @@ RUN apt-get update \
         nicstat \
         numactl \
         procps \
+        sharutils \
         strace \
         sysstat \
         tcpdump \
