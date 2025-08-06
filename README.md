@@ -48,16 +48,30 @@ To use this image in a Kubernetes cluster for debugging:
      name: crisis-tools-pod
    spec:
      hostPID: true
+     hostUsers: true
+     securityContext:
+       seccompProfile:
+         type: Unconfined
+     volumes:
+       - name: sys-kernel-debug
+         hostPath:
+           path: /sys/kernel/debug
+           type: Directory
+       - name: sys-fs-bpf
+         hostPath:
+           path: /sys/fs/bpf
+           type: Directory
      containers:
        - name: crisis-tools
          image: docker.io/basilcrow/crisis-tools:latest
-         command: ["sleep", "infinity"]
          securityContext:
            privileged: true
-           capabilities:
-             add:
-               - SYS_ADMIN
-               - SYS_PTRACE
+         volumeMounts:
+           - name: sys-kernel-debug
+             mountPath: /sys/kernel/debug
+           - name: sys-fs-bpf
+             mountPath: /sys/fs/bpf
+         command: ["sleep", "infinity"]
    ```
 
 2. Apply the pod manifest:
@@ -74,10 +88,20 @@ To use this image in a Kubernetes cluster for debugging:
 
 4. Inside the pod, you can run diagnostic commands like:
    ```bash
-   $ iostat -xz 1
-   $ tcpdump -i eth0
-   $ perf stat -a sleep 10
-   $ bpftrace -e 'tracepoint:raw_syscalls:sys_enter { @[comm] = count(); }'
+   # uptime
+   # dmesg | tail
+   # vmstat 1
+   # mpstat -P ALL 1
+   # pidstat 1
+   # iostat -xz 1
+   # free -m
+   # sar -n DEV 1
+   # sar -n TCP,ETCP 1
+   # top
+   # opensnoop.bt
+   # tcpdump -i eth0
+   # perf stat -a sleep 10
+   # bpftrace -e 'tracepoint:raw_syscalls:sys_enter { @[comm] = count(); }'
    ```
 
 > [!WARNING]
