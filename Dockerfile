@@ -11,7 +11,6 @@ RUN apt-get update \
         iproute2 \
         linux-tools-common \
         linux-tools-generic \
-        msr-tools \
         nicstat \
         numactl \
         procps \
