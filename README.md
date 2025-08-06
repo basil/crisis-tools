@@ -86,4 +86,4 @@ If you believe additional crisis tools should be included or have improvements t
 
 ## License
 
-This repository is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This repository is licensed under the Apache License, Version 2.0. See the [LICENSE](LICENSE) file for details.
