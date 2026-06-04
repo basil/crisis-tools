@@ -44,7 +44,7 @@ jobs:
           dockerfile: Dockerfile
 
       - name: Build Docker image
-        uses: docker/build-push-action@v7.1.0
+        uses: docker/build-push-action@v7.2.0
         with:
           push: false
           tags: crisis-tools:latest
